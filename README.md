@@ -14,7 +14,6 @@ contract Census {
 
     struct Candidate {
         string name;
-        string image;
         uint countVotes;
     }
 
@@ -44,11 +43,11 @@ the contract has the following properties:
 
 the contract defines two structs:
 
-`Candidate`: a struct that stores the name, image, and count of votes for each candidate
+`Candidate`: a struct that stores the name and count of votes for each candidate
 
 `Voter`: a struct that stores whether a voter is authorized to vote, who they voted for, and whether they have voted
 
-an array of candidates `candidates`, which stores the information about the candidates in the poll. The information includes the candidate's name, image and number of votes received.
+an array of candidates `candidates`, which stores the information about the candidates in the poll. The information includes the candidate's name and number of votes received.
 
 a mapping `voters` of addresses to voters' information, which stores information about voters, such as whether they are authorized to vote, for whom they have voted, and whether they have voted or not.
 
