@@ -1,6 +1,6 @@
 # census-smart-contract
 
-A smart contract written in Solidity programming language for conducting a poll on blockchain(s). 
+a smart contract written in Solidity programming language for conducting a poll on blockchain(s). 
 
 ```
 //SPDX-License-Identifier: UNLICENSED
@@ -30,7 +30,7 @@ contract Poll {
 
 ```
 
-The contract has the following properties:
+the contract has the following properties:
 
 `owner`: the address of the contract owner
 
@@ -42,10 +42,14 @@ The contract has the following properties:
 
 `voters`: a mapping of addresses to Voter structs that keep track of each voter's status
 
-The contract defines two structs:
+the contract defines two structs:
 
 `Candidate`: a struct that stores the name, image, and count of votes for each candidate
 
 `Voter`: a struct that stores whether a voter is authorized to vote, who they voted for, and whether they have voted
 
-The contract uses a "modifier" named isOwner to ensure that only the contract owner can perform certain actions. Additionally, the contract has several require statements that enforce various rules, such as only allowing authorized voters to vote, or only allowing the contract owner to change the owner address.
+an array of candidates `candidates`, which stores the information about the candidates in the poll. The information includes the candidate's name, image and number of votes received.
+
+a mapping `voters` of addresses to voters' information, which stores information about voters, such as whether they are authorized to vote, for whom they have voted, and whether they have voted or not.
+
+a modifier, named isOwner will be used to ensure that only the contract owner can perform certain actions. Additionally, the contract has several require statements that enforce various rules, such as only allowing authorized voters to vote, or only allowing the contract owner to change the owner address.
