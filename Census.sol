@@ -13,7 +13,7 @@ contract Census {
     }
 
     struct Voter {
-        bool authorised;
+        bool authorized;
         uint whom;
         bool voted;
     }
@@ -43,7 +43,7 @@ contract Census {
 
     function selfRegister() public {
         require(!isPaused);
-        voters[msg.sender].authorised = true; 
+        voters[msg.sender].authorized = true; 
     }
 
     function getTotalVotes() public view returns(uint) {
@@ -61,7 +61,7 @@ contract Census {
     function vote(uint _id) public {
         require(!isPaused);
         require(!voters[msg.sender].voted);
-        require(voters[msg.sender].authorised);
+        require(voters[msg.sender].authorized);
         voters[msg.sender].whom = _id;
         voters[msg.sender].voted = true;
         candidates[_id].countVotes++;
