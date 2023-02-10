@@ -28,7 +28,11 @@ contract Census {
     constructor() {
         owner = msg.sender;
     }
-
+    
+    function changeOwner(address _owner) public isOwner {
+        owner = _owner;
+    }
+    
     function addCandidate(string memory _candidateName) public isOwner {
         candidates.push(Candidate(_candidateName, 0));
     }
