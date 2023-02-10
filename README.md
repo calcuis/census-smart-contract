@@ -24,6 +24,11 @@ contract Census {
     }
 
     mapping(address => Voter) public voters;
+    
+    modifier isOwner() {
+        require(msg.sender == owner);
+        _;
+    }
 
 ...
 
@@ -51,4 +56,4 @@ an array of candidates `candidates`, which stores the information about the cand
 
 a mapping `voters` of addresses to voters' information, which stores information about voters, such as whether they are authorized to vote, for whom they have voted, and whether they have voted or not.
 
-a modifier, named isOwner will be used to ensure that only the contract owner can perform certain actions. Additionally, the contract has several require statements that enforce various rules, such as only allowing authorized voters to vote, or only allowing the contract owner to change the owner address.
+a modifier, named `isOwner` is used to ensure that only the contract owner can perform certain actions. Additionally, the contract has several require statements that enforce various rules, such as only allowing authorized voters to vote, or only allowing the contract owner to change the owner address.
