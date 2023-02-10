@@ -19,7 +19,7 @@ contract Census {
     }
 
     struct Voter {
-        bool authorised;
+        bool authorized;
         uint whom;
         bool voted;
     }
