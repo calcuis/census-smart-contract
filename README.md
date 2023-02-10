@@ -6,7 +6,7 @@ a smart contract written in Solidity programming language for conducting a poll 
 //SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.18;
 
-contract Poll {
+contract Census {
     address public owner;
     Candidate[] public candidates;
     uint public totalVotes;
